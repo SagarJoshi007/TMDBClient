@@ -3,7 +3,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.tmdbclient">
 
+    <uses-permission android:name="android.permission.INTERNET">
+
+    </uses-permission>
+
     <application
+        android:name=".Presentation.App"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -14,7 +19,16 @@
         android:theme="@style/Theme.TMDBClient"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".Presentation.persons.PersonsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Presentation.tvshow.TvShowActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Presentation.movie.MovieActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Presentation.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -5,18 +5,19 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.example.tmdbclient"
         minSdk 26
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField "String", "API_KEY", "\"69b153237448584ab345cfae043734da\""
+        buildConfigField "String", "API_KEY","\"69b153237448584ab345cfae043734da\""
+        buildConfigField "String", "BASE_URL","\"https://api.themoviedb.org/3/\""
     }
 
     buildFeatures {
@@ -44,6 +45,7 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version")
     // LiveData
     implementation("androidx.lifecycle:lifecycle-livedata:$lifecycle_version")
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.4.1")
     // Lifecycles only (without ViewModel or LiveData)
     implementation("androidx.lifecycle:lifecycle-runtime:$lifecycle_version")
     // Saved state module for ViewModel
@@ -78,7 +80,6 @@ dependencies {
 
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.5.1'
-    implementation 'com.android.databinding:compiler:3.5.1'
     implementation 'com.google.android.material:material:1.7.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation 'junit:junit:4.13.2'
